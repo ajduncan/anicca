@@ -6,6 +6,8 @@
 
 
 function main() {
+    var utility = require("../utility.js");
+    utility.console_header();
     console.log('Starting up asset service.');
     var socket = require("./socket.js");
     var port = process.env.PORT || 9000;
