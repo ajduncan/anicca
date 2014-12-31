@@ -17,6 +17,11 @@
     "start": "node server"
   },
   "dependencies": {
-    "ansi": "0.3.x"
+    "ansi": "0.3.x",
+    "node-oauth2-server": "2.2.x",
+    "body-parser": "1.10.x",
+    "socket.io": "1.2.x",
+    "express": "4.10.x",
+    "node-uuid": "1.4.x"
   }
 }
