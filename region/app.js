@@ -2,7 +2,8 @@
 
 
 function main() {
-    console.log('herp');
+    var utility = require("../lib/utility.js");
+    utility.console_header();
     var game = require("./game.js");
     var world = require("./world.js");
     var socket = require("./socket.js");
