@@ -38,7 +38,7 @@ cd /vagrant; sudo -u vagrant npm install
 
 # Run the app.
 echo "Running anicca services and region app."
-pm2 start processes.json > /dev/null 2>&1
+pm2 start processes.json --watch > /dev/null 2>&1
 
 # Report status
 echo "Status of processes..."

@@ -3,7 +3,7 @@
     "name"        : "anicca-region",
     "script"      : "region/app.js",
     "log_date_format"  : "YYYY-MM-DD HH:mm Z",
-    "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules"],
+    "ignoreWatch" : ["node_modules"],
     "watch"       : true,
     "cwd"         : "/vagrant",
     "env": {
@@ -14,7 +14,7 @@
     "name"       : "anicca-login",
     "script"     : "services/login/app.js",
     "log_date_format"  : "YYYY-MM-DD",
-    "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules"],
+    "ignoreWatch" : ["node_modules"],
     "watch"       : true,
     "cwd"         : "/vagrant",
     "env": {
@@ -25,7 +25,7 @@
     "name"       : "anicca-asset",
     "script"     : "services/asset/app.js",
     "log_date_format"  : "YYYY-MM-DD",
-    "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules"],
+    "ignoreWatch" : ["node_modules"],
     "watch"       : true,
     "cwd"         : "/vagrant",
     "env": {
