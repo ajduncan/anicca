@@ -1,0 +1,36 @@
+{
+  "apps" : [{
+    "name"        : "anicca-region",
+    "script"      : "region/app.js",
+    "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+    "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules"],
+    "watch"       : true,
+    "cwd"         : "/vagrant",
+    "env": {
+        "NODE_ENV": "production",
+        "NODE_PATH": "/vagrant"
+    }
+  },{
+    "name"       : "anicca-login",
+    "script"     : "services/login/app.js",
+    "log_date_format"  : "YYYY-MM-DD",
+    "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules"],
+    "watch"       : true,
+    "cwd"         : "/vagrant",
+    "env": {
+        "NODE_ENV": "production",
+        "NODE_PATH": "/vagrant"
+    }
+  },{
+    "name"       : "anicca-asset",
+    "script"     : "services/asset/app.js",
+    "log_date_format"  : "YYYY-MM-DD",
+    "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules"],
+    "watch"       : true,
+    "cwd"         : "/vagrant",
+    "env": {
+        "NODE_ENV": "production",
+        "NODE_PATH": "/vagrant"
+    }
+  }]
+}
