@@ -4,15 +4,13 @@ A prototype distributed game world server in node.
 
 ## Running ##
 
-export NODE_PATH=`pwd`
+    Run either by using:
 
-node services/asset/app.js &
-node services/login/app.js &
-...
-node region/app.js &
-...
+    $ npm install -g pm2
+    $ npm install
+    $ pm2 start processes.json
 
-Or, you may run with vagrant:
+    or with vagrant;
 
     $ vagrant up
 
