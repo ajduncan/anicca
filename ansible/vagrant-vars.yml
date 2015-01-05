@@ -4,6 +4,7 @@ user_name: vagrant
 user_directory: /home/{{ user_name }}
 project_name: anicca
 project_directory: /{{ user_name }}
+pm2_web_port: 8999
 
 hostname: localhost
 dbuser: anicca

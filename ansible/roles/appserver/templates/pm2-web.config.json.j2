@@ -1,11 +1,11 @@
-# /etc/pm2-web/config.json
+// /etc/pm2-web/config.json
 {
 
         // Web server settings
         "www": {
                 "host": "localhost",
                 "address": "0.0.0.0",
-                "port": 9000,
+                "port": {{ pm2_web_port }},
 
                 "authentication": {
                         // set to true to enable basic http auth

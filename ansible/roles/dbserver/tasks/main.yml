@@ -1,15 +1,21 @@
 - name: Install postgresql and dependencies
-    action: apt name={{ item }}
-    with_items:
-        - postgresql
-        - libpq-dev
-        - python-psycopg2
+  apt: name={{ item }} state=present
+  with_items:
+    - postgresql
+    - libpq-dev
+    - python-psycopg2
 
 - name: Ensure database is created
   postgresql_db: name={{ dbname }}
+  sudo: yes
+  sudo_user: postgres
 
 - name: Ensure user has access to database
   postgresql_user: db={{ dbname }} name={{ dbuser }} password={{ dbpassword }} priv=ALL
+  sudo: yes
+  sudo_user: postgres
 
 - name: Ensure user does not have unnecessary privileges
   postgresql_user: name={{ dbuser }} role_attr_flags=NOSUPERUSER,NOCREATEDB
+  sudo: yes
+  sudo_user: postgres

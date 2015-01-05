@@ -1,3 +1,9 @@
 - include: region.yml
 - include: asset.yml
 - include: login.yml
+- include: pm2-web.yml
+
+- name: Start processes (pm2)
+  command: pm2 start processes.json --watch
+  args:
+    chdir: "{{ project_directory }}"

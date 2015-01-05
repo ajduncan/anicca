@@ -1,0 +1,11 @@
+- name: Ensure pm2-web config directory exists.
+  sudo: yes
+  action: file state=directory path=/etc/pm2-web
+
+- name: Install pm2-web config.json file.
+  sudo: yes
+  template: src=pm2-web.config.json.j2 dest=/etc/pm2-web/config.json
+
+- name: Start pm2 web monitor.
+  sudo: yes
+  command: pm2 start /usr/local/bin/pm2-web
