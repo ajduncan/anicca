@@ -18,6 +18,7 @@ module.exports.Listen = function(port) {
 
         client.on('data', function(data) {
             console.log('client message: %s', data);
+            client.write('Thanks for that message.\n');
         });
 
     });

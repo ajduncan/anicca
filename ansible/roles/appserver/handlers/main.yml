@@ -1,0 +1,2 @@
+- name: restart pm2
+  service: name=pm2 enabled=yes state=restarted

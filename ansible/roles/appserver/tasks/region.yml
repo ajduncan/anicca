@@ -1,0 +1,4 @@
+- name: Install project (local npm) dependencies
+  npm: path={{ project_directory }}
+  sudo: yes
+  sudo_user: {{ user_name }}

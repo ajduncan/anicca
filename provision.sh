@@ -31,6 +31,7 @@ fi
 # Install pm2
 echo "Installing pm2 for process management..."
 npm install pm2 -g > /dev/null 2>&1
+npm install pm2-web -g > /dev/null 2>&1
 
 # Install npm dependencies.
 echo "Installing anicca dependencies..."

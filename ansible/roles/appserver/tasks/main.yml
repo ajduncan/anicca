@@ -1,0 +1,3 @@
+- include: region.yml
+- include: asset.yml
+- include: login.yml

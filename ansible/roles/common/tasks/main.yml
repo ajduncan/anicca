@@ -1,0 +1,37 @@
+- name: set locale to {{ locale }}
+  action: command /usr/sbin/update-locale LANG={{ locale }} LC_ALL={{ locale }}
+  sudo: yes
+
+- name: apt-get update
+  command: apt-get update
+
+- name: Install system dependencies
+  apt: name={{ item }} state=present
+  with_items:
+    - nodejs
+    - npm
+
+- name: Link nodejs to node
+  action: file src=/usr/bin/nodejs dest=/usr/bin/node state=link
+
+- name: Install (global) pm2
+  npm: name=pm2 global=yes
+
+- name: Install (global) pm2-web
+  npm: name=pm2-web global=yes
+
+# For deployments only.
+- name: Create user.
+  sudo: yes
+  action: user home=/home/{{ user_name }} name={{ user_name }} state=present
+  when: not vagrant
+
+- name: Create the project directory.
+  sudo: yes
+  action: file state=directory path={{ project_directory }}
+  when: not vagrant
+
+# need to clone the repo, etc.  todo
+
+# end deployments
+
