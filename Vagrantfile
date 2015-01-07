@@ -10,6 +10,9 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
+
+  config.vm.network "private_network", ip: "10.150.150.1"
+
   config.vm.network "forwarded_port", guest: 8999, host: 8999
   config.vm.network "forwarded_port", guest: 9000, host: 9000
   config.vm.network "forwarded_port", guest: 9001, host: 9001
