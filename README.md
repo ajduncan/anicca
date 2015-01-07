@@ -26,6 +26,10 @@ Or:
 
 curl -X POST -d "grant_type=password&client_id=thom&client_secret=nightworld&username=thomseddon&password=nightworld" -H "Content-Type: application/x-www-form-urlencoded" http://localhost:9001/oauth/token
 
+## Viewer ##
+
+To interact with the services you need to setup a client.  See [bardo](https://github.com/ajduncan/bardo) for this.
+
 ## todo ##
 
 1. Figure out pm2 not reloading on code changes.
