@@ -19,3 +19,15 @@
   postgresql_user: name={{ dbuser }} role_attr_flags=NOSUPERUSER,NOCREATEDB
   sudo: yes
   sudo_user: postgres
+
+- name: Ensure pg_hba conf file is setup
+  sudo: yes
+  sudo_user: postgres
+  template: src=pg_hba.conf.j2 dest=/etc/postgresql/9.3/main/pg_hba.conf
+  notify: restart postgresql
+
+- name: Ensure postgresql.conf file is setup
+  sudo: yes
+  sudo_user: postgres
+  template: src=postgresql.conf.j2 dest=/etc/postgresql/9.3/main/postgresql.conf
+  notify: restart postgresql
