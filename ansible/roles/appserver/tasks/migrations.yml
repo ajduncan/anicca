@@ -1,0 +1,9 @@
+- name: Install (global) knex
+  npm: name=knex global=yes
+
+- name: Perform latest database migrations
+  sudo: yes
+  sudo_user: "{{ user_name }}"
+  command: knex migrate:latest
+  args:
+    chdir: "{{ project_directory }}"

@@ -1,3 +1,9 @@
+- name: Install (global) pm2
+  npm: name=pm2 global=yes
+
+- name: Install (global) pm2-web
+  npm: name=pm2-web global=yes
+
 - name: Ensure pm2-web config directory exists.
   sudo: yes
   action: file state=directory path=/etc/pm2-web

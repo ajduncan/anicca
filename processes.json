@@ -18,6 +18,10 @@
     "watch"       : true,
     "cwd"         : "/vagrant",
     "env": {
+        "DB_HOST": "127.0.0.1",
+        "DB_USER": "anicca",
+        "DB_PASS": "anicca",
+        "DB_NAME": "anicca",
         "NODE_ENV": "production",
         "NODE_PATH": "/vagrant"
     }

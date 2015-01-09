@@ -14,12 +14,6 @@
 - name: Link nodejs to node
   action: file src=/usr/bin/nodejs dest=/usr/bin/node state=link
 
-- name: Install (global) pm2
-  npm: name=pm2 global=yes
-
-- name: Install (global) pm2-web
-  npm: name=pm2-web global=yes
-
 # For deployments only.
 - name: Create user.
   sudo: yes

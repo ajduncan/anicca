@@ -4,5 +4,5 @@
     - vagrant-vars.yml
   roles:
     - common
-    - appserver
     - dbserver
+    - appserver
