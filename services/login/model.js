@@ -1,3 +1,13 @@
+/**
+ * User model.
+ */
+
+'use strict';
+
+var OAuthClient       = require('../../models/oauth_client.js');
+var OAuthAccessToken  = require('../../models/oauth_access_token.js');
+var OAuthRefreshToken = require('../../models/oauth_refresh_token.js');
+
 var model = module.exports;
 
 // In-memory datastores:
@@ -26,20 +36,20 @@ var oauthAccessTokens = [],
     }
   ];
 
-// Debug function to dump the state of the data stores
-model.dump = function() {
-  console.log('oauthAccessTokens', oauthAccessTokens);
-  console.log('oauthClients', oauthClients);
-  console.log('authorizedClientIds', authorizedClientIds);
-  console.log('oauthRefreshTokens', oauthRefreshTokens);
-  console.log('users', users);
-};
-
 /*
  * Required
  */
 
 model.getAccessToken = function (bearerToken, callback) {
+  access_token = new OAuthAccessToken({'access_token': bearerToken}).fetch().then(function (model) {
+    callback(null, {
+      accessToken: model.access_token,
+      clientId: model.client_id,
+      expires: model.expires,
+      userId: model.user_id
+    });
+  });
+/*
   for(var i = 0, len = oauthAccessTokens.length; i < len; i++) {
     var elem = oauthAccessTokens[i];
     if(elem.accessToken === bearerToken) {
@@ -47,6 +57,7 @@ model.getAccessToken = function (bearerToken, callback) {
     }
   }
   callback(false, false);
+*/
 };
 
 model.getRefreshToken = function (bearerToken, callback) {

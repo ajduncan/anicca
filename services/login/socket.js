@@ -12,13 +12,13 @@ module.exports.Listen = function(port) {
     var oauthserver = require('node-oauth2-server');
     
     var app = express();
-    var memorystore = require('./model.js');
+    var store = require('./model.js');
 
     app.use(bodyParser.urlencoded({extended: true}));
     
     app.use(bodyParser.json());
     app.oauth = oauthserver({
-      model: memorystore,
+      model: store,
       grants: ['password','refresh_token'],
       debug: true
     });
