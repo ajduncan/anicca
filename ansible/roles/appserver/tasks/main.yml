@@ -4,6 +4,11 @@
 - include: login.yml
 - include: pm2-web.yml
 
+- name: Ensure application log directory exfists
+  sudo: yes
+  sudo_user: "{{ user_name }}"
+  action: file state=directory path={{ project_directory }}/logs
+
 - name: Start processes (pm2)
   command: pm2 start processes.json --watch
   args:

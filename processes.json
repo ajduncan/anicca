@@ -13,7 +13,11 @@
   },{
     "name"       : "anicca-login",
     "script"     : "services/login/app.js",
-    "log_date_format"  : "YYYY-MM-DD",
+    "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+    "log_file"   : "logs/login.log",
+    "error_file" : "logs/login-err.log",
+    "out_file"   : "logs/login-out.log",
+    "pid_file"   : "logs/login.pid",
     "ignoreWatch" : ["node_modules"],
     "watch"       : true,
     "cwd"         : "/vagrant",
